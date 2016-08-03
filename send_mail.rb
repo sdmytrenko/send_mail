@@ -1,10 +1,11 @@
 # Программа для отправки почты
 require "pony"
+require "io/console"
 
 my_mail = "mysc.myftp@gmail.com"
 
 puts "Введите пароль от вашей почты #{my_mail} для отправки письма: "
-password = STDIN.gets.chomp
+password = STDIN.noecho(&:gets).chomp
 
 puts "Кому отправить письмо?"
 send_to = STDIN.gets.chomp
